@@ -10,7 +10,6 @@ This project is a web application built with Next.js that aggregates programming
 - **Redux Toolkit** for state management
 - **TypeScript** for type safety
 - **Tailwind CSS** for styling
-- **Docker** (optional, for containerization)
 - **LocalStorage** for persisting bookmarks
 
 ## Features
@@ -67,6 +66,7 @@ contestweb/
 │   │   ├── ContestList.tsx      # Renders list of contests based on status
 │   │   ├── ThemeProvider.tsx    # Provides dark/light theme logic
 │   │   └── ClientProvider.tsx   # Enables client-side functionality (e.g., Redux Provider)
+|   |   |__ UpcomingContest.tsx  # Give updates regarding upcoming contests in 24 hrs
 │   ├── hooks/
 │   │   └── reduxhook.ts         # Custom hooks for Redux (useAppDispatch, useAppSelector)
 │   └── redux/
@@ -91,22 +91,8 @@ contestweb/
    ```
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-3. **Build for Production:**  
+3. **Deploy on any Platform**  
    Create an optimized production build and start the server:
-   ```bash
-   npm run build
-   npm start
-   ```
-
-4. **Using Docker (Optional):**  
-   Build the Docker image:
-   ```bash
-   docker build -t contestweb .
-   ```
-   Run the container:
-   ```bash
-   docker run -p 3000:3000 contestweb
-   ```
 
 ## Summary
 This application displays programming contests collected from multiple sources using a robust asynchronous data-fetching approach with Redux Toolkit. It offers filtering and bookmarking features with a clean, responsive UI powered by Next.js and Tailwind CSS.
