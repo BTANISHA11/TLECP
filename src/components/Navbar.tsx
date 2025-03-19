@@ -14,11 +14,10 @@ import {
 
 interface NavbarProps {
   upcomingContestCount: number; // Count of upcoming contests
-  onEmailNotification: () => void; // Function to handle email notification
   onNotificationClick: () => void; // Function to handle notification click
 }
 
-const Navbar: React.FC<NavbarProps> = ({ upcomingContestCount, onEmailNotification, onNotificationClick }) => {
+const Navbar: React.FC<NavbarProps> = ({ upcomingContestCount,  onNotificationClick }) => {
   const { isDark, toggleDarkMode } = useTheme();
   const pathname = usePathname();
 
