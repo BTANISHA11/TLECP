@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   const pathname = usePathname();
 
   // Sample contests (Replace with API call)
-  const [contests, setContests] = useState<Contest[]>([
+  const [contests] = useState<Contest[]>([
     { name: "Codeforces Round 123", startTime: "2025-03-20 14:00:00" },
     { name: "LeetCode Weekly 456", startTime: "2025-03-20 18:30:00" },
   ]);
