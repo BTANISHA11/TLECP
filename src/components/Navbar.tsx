@@ -9,15 +9,9 @@ import {
   HiOutlineMoon,
   HiOutlineBookmark,
   HiOutlineStop,
-  HiOutlineBell,
 } from "react-icons/hi";
 
-interface NavbarProps {
-  upcomingContestCount: number; // Count of upcoming contests
-  onNotificationClick: () => void; // Function to handle notification click
-}
-
-const Navbar: React.FC<NavbarProps> = ({ upcomingContestCount, onNotificationClick }) => {
+const Navbar: React.FC = () => {
   const { isDark, toggleDarkMode } = useTheme();
   const pathname = usePathname();
 
@@ -71,23 +65,6 @@ const Navbar: React.FC<NavbarProps> = ({ upcomingContestCount, onNotificationCli
                 <HiOutlineStop className="h-6 w-6" />
               </Link>
               <span className={labelClasses}>Contests</span>
-            </span>
-
-            {/* Notification Icon (Removed in-email notification) */}
-            <span className={navItemClasses}>
-              <button
-                onClick={onNotificationClick} // Opens notification modal
-                className={getIconContainerClasses("#")}
-                title="Upcoming contests within 24 hours!"
-              >
-                <HiOutlineBell className="h-6 w-6 text-red-500" />
-                {upcomingContestCount > 0 && (
-                  <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1">
-                    {upcomingContestCount}
-                  </span>
-                )}
-              </button>
-              <span className={labelClasses}>Notifications</span>
             </span>
 
             <span className={navItemClasses}>
